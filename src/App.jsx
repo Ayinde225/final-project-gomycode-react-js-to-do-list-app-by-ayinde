@@ -1,24 +1,29 @@
-import mypicture from './mypicture.svg';
-import './styles/App.css';
+import React from "react";
+import { Toaster } from "react-hot-toast";
+import AppContent from "./components/AppContent";
+import AppHeader from "./components/AppHeader";
+import PageTitle from "./components/PageTitle";
+import styles from "./styles/modules/app.module.scss";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={mypicture} className="App-mypicture" alt="mypicture" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="container">
+        <PageTitle>React Js TODO List by Ayinde</PageTitle>
+        <div className={styles.app__wrapper}>
+          <AppHeader />
+          <AppContent />
+        </div>
+      </div>
+      <Toaster
+        position="bottom-right"
+        toastOptions={{
+          style: {
+            fontSize: "1.4rem",
+          },
+        }}
+      />
+    </>
   );
 }
 
